@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ dojo.name }} - Dojo de Karatê</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .dojo-header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .dojo-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .dojo-photo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="dojo-header">
+        <div class="container">
+            <h1>{{ dojo.name }}</h1>
+            <p class="lead">Dojo de Karatê</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container my-5">
+        <div class="dojo-info">
+            <h2>Informações do Dojo</h2>
+            <p><strong>Endereço:</strong> {{ dojo.address }}</p>
+            <p><strong>Telefone:</strong> {{ dojo.phone }}</p>
+            <p><strong>Email:</strong> {{ dojo.email }}</p>
+            <p><strong>Descrição:</strong> {{ dojo.description }}</p>
+            <p><strong>História:</strong> {{ dojo.history }}</p>
+            <p><strong>Sensei:</strong> {{ dojo.sensei }}</p>
+        </div>
+
+        <!-- Foto do Dojo -->
+        {% if dojo.photo %}
+        <div class="text-center mt-4">
+            <img src="{{ dojo.photo.url }}" alt="{{ dojo.name }}" class="dojo-photo">
+        </div>
+        {% endif %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; {{ dojo.name }} - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (opcional, para funcionalidades como dropdowns, modals, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
