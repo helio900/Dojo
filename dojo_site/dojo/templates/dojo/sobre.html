@@ -1,0 +1,19 @@
+{% extends 'dojo/base.html' %}
+
+{% block title %}Sobre o Dojo{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg border-0 rounded-4 p-4">
+    <div class="card-body">
+        <h2 class="text-center text-primary fw-bold mb-4">Sobre o Dojo</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="fs-5"><strong>História:</strong> {{ dojo.history }}</p>
+            </div>
+            <div class="col-md-6">
+                <p class="fs-5"><strong>Sensei:</strong> {{ dojo.sensei }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

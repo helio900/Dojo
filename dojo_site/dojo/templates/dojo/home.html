@@ -1,0 +1,11 @@
+{% extends 'dojo/base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="text-center py-5 bg-light rounded-4 shadow-lg">
+    <h2 class="display-5 fw-bold text-primary">Bem-vindo à Associação Podium Karate</h2>
+    <p class="lead mt-3">{{ dojo.description }}</p>
+    <a href="{% url 'sobre' %}" class="btn btn-primary btn-lg mt-4">Saiba Mais</a>
+</div>
+{% endblock %}

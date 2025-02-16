@@ -1,0 +1,28 @@
+{% extends 'dojo/base.html' %}
+
+{% block title %}Eventos e Fotos{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center text-primary fw-bold mb-4">Eventos e Fotos</h2>
+    
+    <div class="row">
+        {% for evento in eventos %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-dark fw-bold">{{ evento.titulo }}</h5>
+                    <p class="card-text">{{ evento.descricao }}</p>
+                    <p class="card-text text-muted"><small>{{ evento.data }}</small></p>
+                    {% if evento.foto %}
+                    <div class="text-center">
+                        <img src="{{ evento.foto.url }}" alt="{{ evento.titulo }}" class="img-fluid rounded shadow-sm">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

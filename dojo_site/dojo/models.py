@@ -12,3 +12,12 @@ class Dojo(models.Model):
 
     def __str__(self):
         return self.name
+
+class Evento(models.Model):
+    titulo = models.CharField(max_length=100)
+    descricao = models.TextField()
+    data = models.DateField()
+    foto = models.ImageField(upload_to='eventos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.titulo
